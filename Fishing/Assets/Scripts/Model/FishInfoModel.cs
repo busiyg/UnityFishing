@@ -8,5 +8,6 @@ public class FishInfoModel  {
     public int Score;
     public float speed;
     public int HP;
+    public Sprite sprite;
 	
 }

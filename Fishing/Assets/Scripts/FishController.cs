@@ -4,6 +4,7 @@ using UnityEngine;
 using DG.Tweening;
 
 public class FishController : MonoBehaviour {
+    public bool isDead;
     public FishInfoModel FishInfo;
     public SpriteRenderer render;
     public GameObject ScoreAniPrefabs;
@@ -14,8 +15,15 @@ public class FishController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        gameObject.transform.Translate(Vector3.right* FishInfo.speed);
+        if (!isDead) {
+            gameObject.transform.Translate(Vector3.right * FishInfo.speed);
+        }
+      
 	}
+
+    public void UpdateUI() {
+        render.sprite = FishInfo.sprite;
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -41,7 +49,7 @@ public class FishController : MonoBehaviour {
     }
 
     public void KillFish() {
-        FishInfo.speed = 0;
+        isDead = true;
         render.DOColor(Color.red, 0.2f).OnComplete(()=> {
             GameController.GetInstance().scoreController.score += FishInfo.Score;
             Instantiate(ScoreAniPrefabs,transform.position,Quaternion.identity);
