@@ -19,8 +19,8 @@ public class CannonController : MonoBehaviour {
     }
 
     public void UpdateUI() {
-        if (CurrentCannon.sprite!=null) {
-            render.sprite = CurrentCannon.sprite;
+        if (CurrentCannon.CannonSprite!=null) {
+            render.sprite = CurrentCannon.CannonSprite;
         }
        
     }
@@ -39,8 +39,8 @@ public class CannonController : MonoBehaviour {
 
     public void Onclick() {
         var bullet=Instantiate(BulletPrefabs,BulletStartPos);
-        bullet.GetComponent<BulletController>().cannonInfo = CurrentCannon;
-        bullet.transform.SetParent(null);
+        bullet.GetComponent<BulletController>().InitBullet(CurrentCannon);
+       
     }
 
 

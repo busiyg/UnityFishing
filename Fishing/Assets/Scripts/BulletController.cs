@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class BulletController : MonoBehaviour {
     public CannonInfoModel cannonInfo;
+    public SpriteRenderer render;
 	// Use this for initialization
 	void Start () {
         Invoke("InitNet",8);
@@ -13,6 +14,12 @@ public class BulletController : MonoBehaviour {
 	void Update () {
         BulletMove();
 
+    }
+
+    public void InitBullet(CannonInfoModel info) {
+        cannonInfo = info;
+        render.sprite = cannonInfo.BulletSprite;
+        transform.SetParent(null);
     }
 
     public void BulletMove() {

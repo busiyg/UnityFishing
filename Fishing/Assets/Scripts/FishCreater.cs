@@ -26,7 +26,8 @@ public class FishCreater : MonoBehaviour {
         var RandomFish = FishModels[Random.Range(0, FishModels.Count)];
         var pos = new Vector3(gameObject.transform.position.x,RandomY,0);
         var obj =Instantiate(FishePrefab, pos,gameObject.transform.rotation);
-        obj.GetComponent<FishController>().FishInfo = RandomFish;
-        obj.GetComponent<FishController>().UpdateUI();
+       
+        //obj.GetComponent<FishController>().FishInfo = copy;
+        obj.GetComponent<FishController>().InitFish(RandomFish);
     }
 }

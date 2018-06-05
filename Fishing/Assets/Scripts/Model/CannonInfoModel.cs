@@ -10,5 +10,6 @@ public class CannonInfoModel {
     public int Size;
     public int id;
     public string CannonName;
-    public Sprite sprite;
+    public Sprite CannonSprite;
+    public Sprite BulletSprite;
 }

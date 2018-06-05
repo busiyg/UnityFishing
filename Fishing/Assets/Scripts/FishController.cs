@@ -5,7 +5,7 @@ using DG.Tweening;
 
 public class FishController : MonoBehaviour {
     public bool isDead;
-    public FishInfoModel FishInfo;
+    public FishInfoModel FishInfo=new FishInfoModel();
     public SpriteRenderer render;
     public GameObject ScoreAniPrefabs;
 	// Use this for initialization
@@ -21,7 +21,11 @@ public class FishController : MonoBehaviour {
       
 	}
 
-    public void UpdateUI() {
+    public void InitFish(FishInfoModel info) {
+        FishInfo.HP = info.HP;
+        FishInfo.Score = info.Score;
+        FishInfo.speed = info.speed;
+        FishInfo.sprite = info.sprite;
         render.sprite = FishInfo.sprite;
     }
 
@@ -49,7 +53,7 @@ public class FishController : MonoBehaviour {
     }
 
     public void KillFish() {
-        isDead = true;
+        isDead=true;
         render.DOColor(Color.red, 0.2f).OnComplete(()=> {
             GameController.GetInstance().scoreController.score += FishInfo.Score;
             Instantiate(ScoreAniPrefabs,transform.position,Quaternion.identity);
