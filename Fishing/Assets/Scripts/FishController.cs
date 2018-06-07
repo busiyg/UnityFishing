@@ -42,10 +42,24 @@ public class FishController : MonoBehaviour {
                 } else {
                     HitFish();
                 }
-            }
-        
+            }      
         }
-    
+    }
+
+    private void OnTriggerStay2D(Collider2D collision) {
+        if (collision.tag == "Laser") {
+            print("hit me!!!");
+            if (collision.GetComponent<LaserPrefabsController>() != null) {
+                var NetComp = collision.GetComponent<LaserPrefabsController>();
+
+                FishInfo.HP -= NetComp.Damage;
+                if (FishInfo.HP <= 0) {
+                    KillFish();
+                } else {
+                    HitFish();
+                }
+            }
+        }
     }
 
     public void HitFish() {

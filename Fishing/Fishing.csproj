@@ -239,6 +239,7 @@
     <Compile Include="Assets\Scripts\FishController.cs" />
     <Compile Include="Assets\Scripts\FishCreater.cs" />
     <Compile Include="Assets\Scripts\GameController.cs" />
+    <Compile Include="Assets\Scripts\LaserPrefabsController.cs" />
     <Compile Include="Assets\Scripts\Model\CannonInfoModel.cs" />
     <Compile Include="Assets\Scripts\Model\FishInfoModel.cs" />
     <Compile Include="Assets\Scripts\NetPrefabsController.cs" />

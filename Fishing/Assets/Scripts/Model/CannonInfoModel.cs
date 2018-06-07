@@ -4,6 +4,7 @@ using UnityEngine;
 
 [System.Serializable]
 public class CannonInfoModel {
+    public CannonType type;
     public float speed;
     public int damage;
     public int prize;
@@ -12,4 +13,10 @@ public class CannonInfoModel {
     public string CannonName;
     public Sprite CannonSprite;
     public Sprite BulletSprite;
+}
+
+public enum CannonType {
+    bullet=0,
+    laser=1
+
 }

@@ -4,12 +4,22 @@ using UnityEngine;
 using DG.Tweening;
 
 public class BGController : MonoBehaviour {
+    private static BGController Instance;
+    public static BGController GetInstance() {
+        return Instance;
+    }
     public List<Sprite> BGSprites;
     public SpriteRenderer CurrentRender;
     public SpriteRenderer TransitionRender;
     public bool IsChangeing;
     private float Timer;
     public float Interval;
+
+    public GameObject CurrentLaser;
+
+    private void Awake() {
+        Instance = this;
+    }
 
     void Start () {
         CurrentRender.sprite = BGSprites[0];
@@ -50,5 +60,12 @@ public class BGController : MonoBehaviour {
 
     public void OnMouseDown() {
         GameController.GetInstance().cannonController.Onclick();
+    }
+
+    public void OnMouseUp() {
+        if (CurrentLaser!=null) {
+            Destroy(CurrentLaser);
+            CurrentLaser = null;
+        }
     }
 }

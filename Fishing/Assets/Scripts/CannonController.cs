@@ -10,6 +10,8 @@ public class CannonController : MonoBehaviour {
     public SpriteRenderer render;
     public GameObject NetPrefabs;
     public GameObject BulletPrefabs;
+    public GameObject LaserPrefabs;
+
     public Transform BulletStartPos;
 
     void Start() {
@@ -38,8 +40,18 @@ public class CannonController : MonoBehaviour {
     }
 
     public void Onclick() {
-        var bullet=Instantiate(BulletPrefabs,BulletStartPos);
-        bullet.GetComponent<BulletController>().InitBullet(CurrentCannon);
+        if (CurrentCannon.type==CannonType.bullet) {
+            var bullet = Instantiate(BulletPrefabs, BulletStartPos);
+            bullet.GetComponent<BulletController>().InitBullet(CurrentCannon);
+        }
+
+        if (CurrentCannon.type == CannonType.laser) {
+            var laser = Instantiate(LaserPrefabs, BulletStartPos);
+            laser.GetComponent<LaserPrefabsController>().Damage = CurrentCannon.damage;
+            laser.GetComponent<LaserPrefabsController>().size = CurrentCannon.Size;
+            BGController.GetInstance().CurrentLaser = laser;
+        }
+        
        
     }
 

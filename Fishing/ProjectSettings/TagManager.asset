@@ -7,6 +7,7 @@ TagManager:
   - Net
   - Fish
   - Bullet
+  - Laser
   layers:
   - Default
   - TransparentFX
