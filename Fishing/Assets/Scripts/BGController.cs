@@ -15,7 +15,7 @@ public class BGController : MonoBehaviour {
     private float Timer;
     public float Interval;
 
-    public GameObject CurrentLaser;
+
 
     private void Awake() {
         Instance = this;
@@ -58,14 +58,5 @@ public class BGController : MonoBehaviour {
         });
     }
 
-    public void OnMouseDown() {
-        GameController.GetInstance().cannonController.Onclick();
-    }
-
-    public void OnMouseUp() {
-        if (CurrentLaser!=null) {
-            Destroy(CurrentLaser);
-            CurrentLaser = null;
-        }
-    }
+  
 }

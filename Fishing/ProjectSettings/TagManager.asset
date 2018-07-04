@@ -8,6 +8,9 @@ TagManager:
   - Fish
   - Bullet
   - Laser
+  - TargetFish
+  - LockBullet
+  - BG
   layers:
   - Default
   - TransparentFX

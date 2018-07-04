@@ -78,11 +78,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee1f44a0e2551ec449c8f5399d3c4698, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isDead: 0
   FishInfo:
     fishType: 0
     Score: 10
     speed: 0.1
     HP: 100
+    sprite: {fileID: 0}
   render: {fileID: 212255735191592992}
   ScoreAniPrefabs: {fileID: 1841302689636428, guid: 9fe168377a8b03e40a8f498deb319329,
     type: 2}

@@ -9,7 +9,7 @@ public class LaserPrefabsController : MonoBehaviour {
     public BoxCollider2D NetCollider;
     // Use this for initialization
     void Start () {
-        transform.DOScaleX(size, 0.5f).OnComplete(()=> {
+        transform.DOScaleX(size, 0.3f).OnComplete(()=> {
             NetCollider.enabled = true;
         });
 
@@ -17,7 +17,10 @@ public class LaserPrefabsController : MonoBehaviour {
     }
 
     public void DestoryNet() {
-        Destroy(gameObject, 0.5f);
+        transform.DOScaleX(0, 0.2f).OnComplete(() => {
+            Destroy(gameObject);
+        });
+      
     }
 
 

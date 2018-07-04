@@ -49,10 +49,8 @@ public class CannonController : MonoBehaviour {
             var laser = Instantiate(LaserPrefabs, BulletStartPos);
             laser.GetComponent<LaserPrefabsController>().Damage = CurrentCannon.damage;
             laser.GetComponent<LaserPrefabsController>().size = CurrentCannon.Size;
-            BGController.GetInstance().CurrentLaser = laser;
-        }
-        
-       
+            TouchManager.GetInstance().CurrentLaser = laser;    
+        }     
     }
 
 

@@ -231,6 +231,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Bezier.cs" />
     <Compile Include="Assets\Demigiant\DOTween\Examples\Basics.cs" />
     <Compile Include="Assets\Demigiant\DOTween\Examples\Sequences.cs" />
     <Compile Include="Assets\Scripts\BGController.cs" />
@@ -240,11 +241,13 @@
     <Compile Include="Assets\Scripts\FishCreater.cs" />
     <Compile Include="Assets\Scripts\GameController.cs" />
     <Compile Include="Assets\Scripts\LaserPrefabsController.cs" />
+    <Compile Include="Assets\Scripts\LockAndShoot.cs" />
     <Compile Include="Assets\Scripts\Model\CannonInfoModel.cs" />
     <Compile Include="Assets\Scripts\Model\FishInfoModel.cs" />
     <Compile Include="Assets\Scripts\NetPrefabsController.cs" />
     <Compile Include="Assets\Scripts\ScoreAniController.cs" />
     <Compile Include="Assets\Scripts\ScoreController.cs" />
+    <Compile Include="Assets\Scripts\TouchManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Demigiant\DOTween\DOTween.XML" />
