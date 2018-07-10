@@ -16,9 +16,9 @@ public class Bezier : MonoBehaviour {
             lineRenderer = GetComponent<LineRenderer>();
         }
         lineRenderer.sortingLayerID = layerOrder;
-        Vector3[] trans = new Vector3[] { new Vector3(0,0,0),new Vector3(4,0,0),new Vector3(5,3,0)};
+        Vector3[] trans = new Vector3[] { new Vector3(0, 0, 0), new Vector3(4, 0, 0), new Vector3(5, 3, 0) };
         trans = calculate(controlPoints, 50).ToArray();
-        Cube.transform.DOPath(trans, 10,PathType.CatmullRom,PathMode.Sidescroller2D, 1);
+        Cube.transform.DOLocalPath(trans, 3, PathType.CatmullRom, PathMode.Sidescroller2D, 1).SetOptions(true).SetLookAt(0.01f);
     }
 
     void Update() {

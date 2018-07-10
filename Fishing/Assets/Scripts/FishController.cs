@@ -16,10 +16,17 @@ public class FishController : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         if (!isDead) {
-            gameObject.transform.Translate(Vector3.right * FishInfo.speed);
+            //gameObject.transform.Translate(Vector3.right * FishInfo.speed);
         }
       
 	}
+
+    public void MoveByPath(List<Vector3> transList) {
+        var trans = transList.ToArray();
+        gameObject.transform.DOLocalPath(trans, 10, PathType.CatmullRom, PathMode.Sidescroller2D, 1).SetLookAt(0.01f).OnComplete(()=> {
+            Destroy(gameObject);
+        });
+    }
 
     public void InitFish(FishInfoModel info) {
         FishInfo.HP = info.HP;
@@ -54,7 +61,7 @@ public class FishController : MonoBehaviour {
 
                 FishInfo.HP -= NetComp.Damage;
                 if (FishInfo.HP <= 0) {
-                    KillFish();
+                    KillFish();            
                 } else {
                     HitFish();
                 }
@@ -67,16 +74,17 @@ public class FishController : MonoBehaviour {
     }
 
     public void KillFish() {
-        isDead=true;
+        gameObject.transform.DOKill();
+        isDead =true;
         render.DOColor(Color.red, 0.2f).OnComplete(()=> {
             GameController.GetInstance().scoreController.score += FishInfo.Score;
             Instantiate(ScoreAniPrefabs,transform.position,Quaternion.identity);
             Destroy(gameObject); });
     }
 
-    private void OnBecameInvisible() {
-        Destroy(gameObject);
-    }
+    //private void OnBecameInvisible() {
+    //    Destroy(gameObject);
+    //}
 
 
 

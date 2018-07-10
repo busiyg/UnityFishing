@@ -23,11 +23,11 @@ public class TouchManager : MonoBehaviour {
 	}
 
     public void OnMouseDown() {
-        if (LockAndShoot.GetInstance().Lock) {
+        //if (LockAndShoot.GetInstance().Lock) {
 
-        } else {
+        //} else {
             GameController.GetInstance().cannonController.Onclick();
-        }
+       // }
       
     }
 
