@@ -13,11 +13,13 @@
     <TargetFrameworkIdentifier>.NETFramework</TargetFrameworkIdentifier>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <TargetFrameworkProfile>Unity Subset v3.5</TargetFrameworkProfile>
-    <CompilerResponseFile></CompilerResponseFile>
+    <CompilerResponseFile>
+    </CompilerResponseFile>
     <UnityProjectType>Game:1</UnityProjectType>
     <UnityBuildTarget>StandaloneWindows64:19</UnityBuildTarget>
     <UnityVersion>2017.2.0f3</UnityVersion>
-    <RootNamespace></RootNamespace>
+    <RootNamespace>
+    </RootNamespace>
     <LangVersion>4</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -234,21 +236,21 @@
     <Compile Include="Assets\Bezier.cs" />
     <Compile Include="Assets\Demigiant\DOTween\Examples\Basics.cs" />
     <Compile Include="Assets\Demigiant\DOTween\Examples\Sequences.cs" />
-    <Compile Include="Assets\Scripts\BGController.cs" />
+    <Compile Include="Assets\Scripts\BG\BGController.cs" />
     <Compile Include="Assets\Scripts\BulletController.cs" />
     <Compile Include="Assets\Scripts\CannonController.cs" />
-    <Compile Include="Assets\Scripts\FishController.cs" />
-    <Compile Include="Assets\Scripts\FishCreater.cs" />
-    <Compile Include="Assets\Scripts\FishManager.cs" />
-    <Compile Include="Assets\Scripts\FishTeamController.cs" />
+    <Compile Include="Assets\Scripts\Fish\FishController.cs" />
+    <Compile Include="Assets\Scripts\Fish\FishManager.cs" />
+    <Compile Include="Assets\Scripts\Fish\FishTeamController.cs" />
     <Compile Include="Assets\Scripts\GameController.cs" />
     <Compile Include="Assets\Scripts\LaserPrefabsController.cs" />
+    <Compile Include="Assets\Scripts\LittleTeamController.cs" />
     <Compile Include="Assets\Scripts\LockAndShoot.cs" />
     <Compile Include="Assets\Scripts\Model\BezierPathModel.cs" />
     <Compile Include="Assets\Scripts\Model\CannonInfoModel.cs" />
     <Compile Include="Assets\Scripts\Model\FishInfoModel.cs" />
     <Compile Include="Assets\Scripts\NetPrefabsController.cs" />
-    <Compile Include="Assets\Scripts\PathManager.cs" />
+    <Compile Include="Assets\Scripts\Path\PathManager.cs" />
     <Compile Include="Assets\Scripts\ScoreAniController.cs" />
     <Compile Include="Assets\Scripts\ScoreController.cs" />
     <Compile Include="Assets\Scripts\TouchManager.cs" />
