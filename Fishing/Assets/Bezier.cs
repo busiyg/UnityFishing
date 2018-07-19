@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using DG.Tweening;
 [RequireComponent(typeof(LineRenderer))]
+[ExecuteInEditMode]
 public class Bezier : MonoBehaviour {
     public List<Transform> controlPoints;
     public LineRenderer lineRenderer;
-    public GameObject Cube;
 
-    private int layerOrder = 0;
+ //   private int layerOrder = 0;
     private int _segmentNum = 100;
 
 
@@ -15,13 +15,18 @@ public class Bezier : MonoBehaviour {
         if (!lineRenderer) {
             lineRenderer = GetComponent<LineRenderer>();
         }
-        lineRenderer.sortingLayerID = layerOrder;
-        Vector3[] trans = new Vector3[] { new Vector3(0, 0, 0), new Vector3(4, 0, 0), new Vector3(5, 3, 0) };
-        trans = calculate(controlPoints, 50).ToArray();
-        Cube.transform.DOLocalPath(trans, 3, PathType.CatmullRom, PathMode.Sidescroller2D, 1).SetOptions(true).SetLookAt(0.01f);
+    }
+
+    public void GetChilTranform() {
+        controlPoints.Clear();
+        var count = transform.childCount;
+        for (int i=0;i< count;i++) {
+            controlPoints.Add(transform.GetChild(i));
+        }
     }
 
     void Update() {
+        GetChilTranform();
         calculate(controlPoints, 50);
         //  DrawCurve();
     }
@@ -58,14 +63,6 @@ public class Bezier : MonoBehaviour {
         return p;
     }
 
-    public List<Vector3> InitPos(List<Transform> Trans,int Times) {
-        List<Vector3> ReturnVector = new List<Vector3>();
-        for (int i=0;i< Times;i++) {
-
-        }
-
-        return ReturnVector;
-    }
 
     public List<Vector3> calculate(List<Transform> poss, int precision) {
 
@@ -112,9 +109,4 @@ public class Bezier : MonoBehaviour {
         }
         return result;
     }
-
-    public void Test(int i) {
-        calculate(controlPoints, i);
-    }
-
 }

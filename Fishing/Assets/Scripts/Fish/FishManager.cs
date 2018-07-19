@@ -85,15 +85,15 @@ public class FishManager : MonoBehaviour {
     }
 
     public void TestInitFish() {
-        var RandomPath =Random.Range(0, 3);
+        var RandomPath =Random.Range(0, PathManager.GetInstance().BezierPath.Count);
         var RandomFish = Random.Range(0, FishModels.Count);
         InitFish(RandomPath,RandomFish);
     }
 
     public void TestLittleTeam() {
         var RandomLittleTeam = Random.Range(0, 2);
-        var RandomFish = Random.Range(0, FishModels.Count);
-        var RandomPath = Random.Range(0, 3);
+        var RandomFish = Random.Range(0, PathManager.GetInstance().BezierPath.Count);
+        var RandomPath = Random.Range(0, 6);
         InitLittleTeam(RandomLittleTeam,RandomFish,RandomPath);
     }
 }

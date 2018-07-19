@@ -23,10 +23,8 @@ public class CannonController : MonoBehaviour {
     public void UpdateUI() {
         if (CurrentCannon.CannonSprite!=null) {
             render.sprite = CurrentCannon.CannonSprite;
-        }
-       
+        }       
     }
-
 
 	void Update () {
         ChangeRotation();
@@ -52,6 +50,4 @@ public class CannonController : MonoBehaviour {
             TouchManager.GetInstance().CurrentLaser = laser;    
         }     
     }
-
-
 }
